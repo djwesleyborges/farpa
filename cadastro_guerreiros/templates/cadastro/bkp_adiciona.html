@@ -1,0 +1,150 @@
+{% load static %}
+{% block corpo %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="icon" href="{{ STATIC_URL }}img/favicon.ico">
+      <!-- Bootstrap core CSS -->
+      <link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+      <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+      <link href="{% static 'bootstrap/dist/css/bootstrap.css' %}" rel="stylesheet">
+
+      <script src="{% static 'bootstrap/assets/js/vendor/jquery-slim.min.js' %}"></script>
+      <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+      <!-- Custom styles for this template -->
+      <link href="{% static 'bootstrap/dist/css/signin.css' %}" rel="stylesheet">
+      <title>Signin Template for Bootstrap</title>
+  </head>
+
+    <!--<body class="text-center">
+    <form class="form-signin">
+      <img class="mb-4" src="{% static 'img/farpa.jpeg' %}" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Cadastro membro F.A.R.P.A</h1>
+      {% csrf_token %}
+        {{ form.as_table }}
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </form>
+    </body>
+    -->
+
+    <body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="mb-4" src="{% static 'img/farpa.jpeg' %}" alt="" width="72" height="72">
+        <h2>Cadastro membro F.A.R.P.A</h2>
+      </div>
+        <div class="col-md-8 order-md-1">
+          <form method="POST" class="needs-validation" novalidate>
+              {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                  {{ form.nome.errors }}
+                <label for="firstName">Nome</label> <!--NOME-->
+                  {{ form.nome }}
+                <input type="text" class="form-control" id="nome" placeholder="Fulano de Tal" value="" required>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                  {{ form.telefone.errors }}
+                <label for="lastName">Telefone</label> <!--TELEFONE-->
+                  {{ form.telefone }}
+                <input type="text" class="form-control" id="telefone" placeholder="062 9 9999-9999" value="" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    {{ form.endereco.errors }}
+                    <label for="firstName">Endereço</label>
+                    {{ form.endereco }}
+                    <input type="text" class="form-control" id="endereco" placeholder="Rua Tal QD 01 LT 01 - Bairro Tal Ap. de Goiânia" value="" required>
+                    <div class="invalid-feedback">
+                        Valid first name is required.
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    {{ form.contato_emergencia.errors }}
+                    <label for="lastName">Contato de Emergencia</label>
+                    {{ form.contato_emergencia }}
+                    <input type="text" class="form-control" id="contato_emergencia" placeholder="Fulano de tal 062 9 9999-9999" value="" required>
+                    <div class="invalid-feedback">
+                        Valid last name is required.
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                  {{ form.facebook.errors }}
+                  <label for="firstName">Facebook</label>
+                  {{ form.facebook }}
+                  <input type="text" class="form-control" id="facebook" placeholder="id_usuario" value="" required>
+                  <div class="invalid-feedback">
+                      Valid first name is required.
+                  </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                  {{ form.instagram.errors }}
+                  <label for="lastName">Instagram</label>
+                  {{ form.instagram }}
+                  <input type="text" class="form-control" id="instagram" placeholder="nick_usuario" value="" required>
+                  <div class="invalid-feedback">
+                      Valid last name is required.
+                  </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                  {{ form.tipo_sanguineo.errors }}
+                  <label for="firstName">Tipo Sanguineo</label>
+                  {{ form.tipo_sanguineo }}
+                  <input type="text" class="form-control" id="tipo_sanguineo" placeholder="O+" value="" required>
+                  <div class="invalid-feedback">
+                      Valid first name is required.
+                  </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                  {{ form.alergia_medicamento.errors }}
+                  <label for="lastName">Alergia a Medicamento ?</label>
+                  {{ form.alergia_medicamento }}
+                  <input type="text" class="form-control" id="alergia_medicamento" placeholder="Sim - Dipirona" value="" required>
+                  <div class="invalid-feedback">
+                      Valid last name is required.
+                  </div>
+              </div>
+            </div>
+
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Cadastrar</button>
+          </form>
+            <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2018 Wesley Borges - Nick DJ</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+
+</html>
+
+{% endblock %}

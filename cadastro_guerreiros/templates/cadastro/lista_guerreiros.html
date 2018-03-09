@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
+    rel="stylesheet" type="text/css">
+
+    <link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}"rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+  </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="collapse navbar-collapse navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="h3 nav-link" href="/home">Inicio<span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item active">
+        <a class="h3 nav-link" href="/adiciona">Cadastro<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+
+
+</nav>
+
+<!--ALTERACOES-->
+<div class="container-fluid bg-dark">
+            <div class="section">
+                <div class="container" id="show">
+                    <div class="row panel panel-primary panel-heading">
+                        <div class="col-md-8 container ">
+                            <div class="col-6 container">
+                                <img  src="{% static 'img/farpa_nome.jpeg' %}" alt="" width="350" height="50">
+                                <div>
+                                    <h1 class="h3 col-6 container">︻芫══一 • F.A.R.P.A GYN Membros</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+
+    {% for farpa in lista_guerreiros%}
+
+        <div class="container-fluid bg-dark">
+            <div class="section">
+                <div class="container" id="show">
+                    <div class="row panel panel-primary panel-heading">
+                        <div class="col-md-8">
+                            <h1>{{farpa.nome}}</h1>
+                            <h3>{{farpa.current_position}}</h3>
+                            <p><a href="https://www.facebook.com/{{farpa.facebook}}"> <i>Facebook</i><img border="0" src="{% static 'img/facebook.png' %}" width="20" height="20"/></a></p>
+                            <p><a href="https://www.instagram.com/{{farpa.instagram}}"> <i>Instagram</i><img border="0" src="{% static 'img/instagram.png' %}" width="20" height="20"/></a></p>
+                            {% if farpa.mascara == 1 %}
+                            <p><span class="negrit">Mascara: </span>Sim</p>
+                            {% else %}
+                            <p><span class="negrit">Mascara: </span>Não</p>
+                            {% endif %}
+
+                            {% if farpa.luva == 1 %}
+                            <p><span class="negrit">Luva: </span>Sim</p>
+                            {% else %}
+                            <p><span class="negrit">Luva: </span>Não</p>
+                            {% endif %}
+
+                            {% if farpa.marcador == 1 %}
+                            <p><span class="negrit">Marcador: </span>Sim</p>
+                            {% else %}
+                            <p><span class="negrit">Marcador: </span>Não</p>
+                            {% endif %}
+
+                            {% if farpa.farda == 1 %}
+                            <p><span class="negrit">Farda: </span>Sim</p>
+                            {% else %}
+                            <p><span class="negrit">Farda: </span>Não</p>
+                            {% endif %}
+
+                            {% if farpa.radio == 1 %}
+                            <p><span class="negrit">Radio: </span>Sim</p>
+                            {% else %}
+                            <p><span class="negrit">Radio: </span>Não</p>
+                            {% endif %}
+
+                            {% if farpa.colete == 1 %}
+                            <p><span class="negrit">Colete: </span>Sim</p>
+                            {% else %}
+                            <p><span class="negrit">Colete: </span>Não</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h2>{{ farpa.nome }}</h2>
+                        </div>
+                        <div class="panel-body">
+                            <p><span class="negrit">Data de nascimento : </span>{{farpa.nome}}</p>
+                            <p><span class="negrit">Endereço : </span>{{farpa.endereco}}</p>
+                            <p><span class="negrit">Cidade :</span>{{farpa.alergia_medicamento}} <span class="negrit">cep: </span>{{farpa.nome}}</p>
+                            <p><span class="negrit">Tel :</span> {{farpa.telefone}} <span class="negrit"> Cel: </span>{{farpa.telefone}}</p>
+                            <p><span class="negrit">E-mail :</span>{{farpa.tipo_sanguineo}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    -->
+    {% empty %}
+     <div class="alert alert-danger">
+         <h2>Você ainda não cadastrou nehuma informação!!</h2>
+     </div>
+    {% endfor %}
+
+</body>
+</html>

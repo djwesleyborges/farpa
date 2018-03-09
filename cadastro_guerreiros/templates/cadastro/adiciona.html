@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block corpo %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+
+        <!--CSS PAGINA-->
+  </head>
+
+    <body class="text-center">
+    <form method="POST">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+  </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="collapse navbar-collapse navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="h3 nav-link" href="/home">Inicio<span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item active">
+        <a class="h3 nav-link" href="/adiciona">Cadastro<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+
+
+</nav>
+      <img class="mb-4" src="{% static 'img/farpa.jpeg' %}" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Cadastro membro F.A.R.P.A</h1>
+      {% csrf_token %}
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="nome">Nome</label>
+                {{ form.nome }}
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="telefone">Telefone</label>
+                {{ form.telefone }}
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="endereco">Endereço</label>
+                {{ form.endereco }}
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="instagram">Instagram</label>
+                {{ form.instagram }}
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="facebook">Facebook</label>
+                {{ form.facebook }}
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="contato_emergencia">Contato de Emergencia</label>
+                {{ form.contato_emergencia }}
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="tipo_sanguineo">Tipo Sanguineo</label>
+                {{ form.tipo_sanguineo }}
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="alergia_medicamento">Alergia a algum Medicamento ?</label>
+                {{ form.alergia_medicamento }}
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="mascara">Possui Mascara ?</label>
+                {{ form.mascara }}
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="luva">Possui Luva ?</label>
+                {{ form.luva }}
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="marcador">Possui Marcador ?</label>
+                {{ form.marcador }}
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="farda">Possui Farda ?</label>
+                {{ form.farda }}
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="radio">Possui Radio ?</label>
+                {{ form.radio }}
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="colete">Possui Colete ?</label>
+                {{ form.colete }}
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+
+      <button class="btn btn-primary" type="submit">Cadastrar</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+
+    </form>
+
+    </body>
+</html>
+
+{% endblock %}

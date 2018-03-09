@@ -1,0 +1,36 @@
+<!--{# Load the tag library #}
+{% load bootstrap3 %}
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+    <link href="{% static 'bootstrap/dist/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/dist/css/signin.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/dist/css/form-validation.css' %}" rel="stylesheet">
+
+    <!--JS-->
+    <script src="{% static 'bootstrap/assets/js/vendor/jquery-slim.min.js' %}"></script>
+    <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
+    {% block cabecalho %}
+    <title>F.A.R.P.A</title>
+    {% endblock %}
+</head>
+
+<body>
+
+    {% block corpo %}
+
+    {% endblock %}
+
+</body>
+
+</html>

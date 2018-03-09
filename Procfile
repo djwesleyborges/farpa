@@ -1,0 +1,1 @@
+web: gunicorn farpa.wsgi --log-file -
